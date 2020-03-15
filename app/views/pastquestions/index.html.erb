@@ -1,0 +1,29 @@
+
+<div class="mx-auto" style="width: 200px;">
+<% @pastquestions.each do |pastquestion| %>
+
+      <div class="">
+        <ul class="">
+          <li>
+            <%= link_to '詳細', "/pastquestions/#{pastquestion.id}", method: :get %>
+          </li>
+    <% if user_signed_in? && current_user.id == pastquestion.user_id %>
+          <li>
+            <%= link_to '編集', "/pastquestions/#{pastquestion.id}/edit", method: :get %>
+          </li>
+          <li>
+            <%= link_to '削除', "/pastquestions/#{pastquestion.id}", method: :delete %>
+          </li>
+        </ul>
+      </div>
+    <% end %>
+  <p><%= pastquestion.prefecture %></p>
+  <p><%= pastquestion.p_question %></p>
+    <span class="name">
+          <a href="">
+            <span>投稿者</span><%= pastquestion.user.nickname %>
+          </a>
+    </span>
+<% end %>
+  <%= paginate(@pastquestions) %>
+</div>

@@ -1,0 +1,10 @@
+<div class="">
+  <p><%= @nickname %>さんの投稿一覧</p>
+  <% @pastquestions.each do |pastquestion| %>
+    <div class="">
+      <span><%= pastquestion.prefecture %></span>
+      <%= simple_format(pastquestion.p_question) %>
+    </div>
+  <% end %>
+<%= paginate(@pastquestions) %>
+</div>
