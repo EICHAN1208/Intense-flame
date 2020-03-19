@@ -1,0 +1,8 @@
+<% @questions.each do |question| %>
+      <p>Q.<%= question.question %></p>
+
+      <% @answers.each do |answer| %>
+        <p><%= answer.answer %></p>
+      <% end %>
+    
+<% end %>

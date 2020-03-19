@@ -1,9 +1,9 @@
 
-<div class="mx-auto" style="width: 200px;">
+<div class="">
 <% @pastquestions.each do |pastquestion| %>
 
       <div class="">
-        <ul class="">
+        <ul>
           <li>
             <%= link_to '詳細', "/pastquestions/#{pastquestion.id}", method: :get %>
           </li>
@@ -17,12 +17,11 @@
         </ul>
       </div>
     <% end %>
+
   <p><%= pastquestion.prefecture %></p>
   <p><%= pastquestion.p_question %></p>
-    <span class="name">
-          <a href="">
-            <span>投稿者</span><%= pastquestion.user.nickname %>
-          </a>
+    <span class="active">
+      <span>投稿者：<%= link_to "#{pastquestion.user.nickname}", "/users/#{pastquestion.user.id}" %></span>
     </span>
 <% end %>
   <%= paginate(@pastquestions) %>

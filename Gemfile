@@ -66,3 +66,5 @@ gem 'jquery-rails'
 
 gem 'devise'
 gem 'kaminari'
+gem 'font-awesome-sass', '~> 5.4.1'
+gem 'ransack'

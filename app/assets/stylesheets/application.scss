@@ -15,3 +15,138 @@
  // */
 
 @import "bootstrap";
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #adc7de;
+  background: #213b52;
+}
+
+// footerを下部に固定するための記述
+body,
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+a {
+  color: #fdc134;
+}
+
+a:hover {
+  color: #fdd067;
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Raleway", sans-serif;
+}
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+#header {
+  height: 80px;
+  transition: all 0.5s;
+  z-index: 997;
+  transition: all 0.5s;
+  padding: 16px 0;
+  background: #213b52;
+}
+
+#header .logo h1 a, #header .logo h1 a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+#header .logo h1 a span, #header .logo h1 a:hover span {
+  color: #fdc134;
+}
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+/* Desktop Navigation */
+.nav-menu, .nav-menu * {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-menu > ul > li {
+  position: relative;
+  white-space: nowrap;
+  float: left;
+}
+
+.nav-menu ul {
+  border-radius: 6px;
+}
+
+.nav-menu a {
+  display: block;
+  position: relative;
+  color: #adc7de;
+  padding: 10px 15px;
+  transition: 0.3s;
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav-menu .get-started a {
+  background: #213b52;
+  color: #fff;
+  border-radius: 50px;
+  margin: 2px 0 0 15px;
+  padding: 4px 25px 6px 25px;
+  border: 2px solid #fdc134;
+}
+
+.nav-menu .get-started a:hover {
+  background: #fdc134;
+  color: #213b52;
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+#footer {
+  background: #213b52;
+  color: #fff;
+  font-size: 14px;
+  position: relative;
+  // footerを下部に記述するための記述
+  margin-top: auto;
+}
+
+#footer .footer-bottom {
+  border-top: 1px solid #1a2e40;
+  z-index: 2;
+  position: relative;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+#footer .copyright {
+  text-align: center;
+  float: left;
+}
+
+@media (max-width: 768px) {
+  #footer .copyright, #footer .credits {
+    padding: 5px;
+    float: none;
+    text-align: ceneter;
+  }
+}

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root  'pastquestions#index'
+  root  'top#index'
   resources :pastquestions do
     resources :comments, only: [:create]
   end
@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   # get 'pastquestions/:id' => 'pastquestions#show'
   resources :users, only: [:show]
   # get   'users/:id'   =>  'users#show'
+  resources :questions, only: [:index]
+  
 end
