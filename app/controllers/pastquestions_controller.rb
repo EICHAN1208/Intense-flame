@@ -3,7 +3,9 @@ class PastquestionsController < ApplicationController
     before_action :move_to_index, except: [:index, :show]
 
     def index
-      @pastquestions = Pastquestion.includes(:user).order("created_at DESC").page(params[:page]).per(5)
+      # @pastquestions = Pastquestion.includes(:user).order("created_at DESC").page(params[:page]).per(5)
+      @q = Pastquestion.ransack(params[:q])
+      @pastquestions = @q.result(distinct: true).includes(:user).order("created_at DESC").page(params[:page]).per(5)
     end
 
     def new

@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
+  
   devise_for :users
   root  'top#index'
   resources :pastquestions do
     resources :comments, only: [:create]
+    resource :favorites, only: [:create, :destroy]
   end
   # get 'pastquestions' => 'pastquestions#index'
   # get   'pastquestions/new'  =>  'pastquestions#new'
@@ -14,5 +16,5 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   # get   'users/:id'   =>  'users#show'
   resources :questions, only: [:index]
-  
+
 end

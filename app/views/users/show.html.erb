@@ -6,5 +6,11 @@
       <%= simple_format(pastquestion.p_question) %>
     </div>
   <% end %>
+
+  <% @favorite_pastquestions.each do |pastquestion| %>
+    <hr>
+    <p><span>お気に入りした内容: </span><%=link_to pastquestion.p_question, pastquestion_path(pastquestion.id) %></p>
+  <% end %>
+
 <%= paginate(@pastquestions) %>
 </div>

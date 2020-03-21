@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
   has_many :pastquestions
   has_many :comments
+  has_many :favorites
+  has_many :favorite_pastquestions, through: :favorites, source: :pastquestion
 end

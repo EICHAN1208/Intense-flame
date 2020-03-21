@@ -4,5 +4,6 @@ class UsersController < ApplicationController
     @nickname = user.nickname
     @pastquestions = user.pastquestions.page(params[:page]).per(5).order("created_at DESC")
     # @pastquestions = current_user.pastquestions.order("created_at DESC").page(params[:page]).per(5)
+    @favorite_pastquestions = user.favorite_pastquestions
   end
 end

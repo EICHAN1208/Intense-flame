@@ -21,18 +21,16 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+html {
+    height: 100%;
+}
+
 body {
   font-family: "Open Sans", sans-serif;
   color: #adc7de;
   background: #213b52;
-}
-
-// footerを下部に固定するための記述
-body,
-#wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  height: 100%;
+  margin: 0;
 }
 
 a {
@@ -117,6 +115,48 @@ h1, h2, h3, h4, h5, h6 {
   background: #fdc134;
   color: #213b52;
 }
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+#hero {
+  width: 100%;
+  padding: 0 0 100px 0;
+
+}
+
+#hero h1 {
+  margin: 0 0 15px 0;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 56px;
+  color: #d2e0ed;
+  font-family: "Poppins", sans-serif;
+}
+
+#hero h2 {
+  color: #fff;
+  margin-bottom: 40px;
+  font-size: 22px;
+}
+
+#hero .btn-get-started {
+  color: #213b52;
+  border-radius: 50px;
+  padding: 8px 35px 10px 35px;
+  border: 2px solid #fdc134;
+  transition: all ease-in-out 0.3s;
+  display: inline-block;
+  background: #fdc134;
+}
+
+#hero .btn-get-started:hover {
+  background: transparent;
+  color: #fff;
+}
+
+
+
+
 
 /*--------------------------------------------------------------
 # Footer
@@ -125,9 +165,10 @@ h1, h2, h3, h4, h5, h6 {
   background: #213b52;
   color: #fff;
   font-size: 14px;
-  position: relative;
-  // footerを下部に記述するための記述
-  margin-top: auto;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
 }
 
 #footer .footer-bottom {

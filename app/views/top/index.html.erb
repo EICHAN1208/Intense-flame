@@ -1,11 +1,17 @@
 <section id="hero">
-
   <div class="container">
     <div class="row d-flex align-items-center"">
-      <div class=" col-lg-6 py-5 py-lg-0 order-2 order-lg-1" data-aos="fade-right">
-        <h1>消防に関わるすべてのひとに。</h1>
-        <h2>各自治体ごとの良し悪しをシェアしましょう！</h2>
-        <a href="#about" class="btn-get-started scrollto">Get Started</a>
+      <div class=" col-lg-10 py-5 py-lg-0 order-2 order-lg-1" data-aos="fade-right">
+        <h1>  <br>  <br>  <br>消防に関わるすべてのひとに。  <span><i class="fab fa-gripfire"></i></span></h1>
+        <h2>各自治体のことをシェアしましょう！<br>またクイズを楽しみましょう！</h2>
+        <% if user_signed_in? %>
+          <a href="pastquestions/new" class="btn-get-started scrollto">投稿する</a>
+          <a href="questions" class="btn-get-started scrollto">クイズに答える</a>
+        <% else %>
+          <a href="/users/sign_in" class="btn-get-started scrollto">ログイン</a>
+          <a href="/users/sign_up" class="btn-get-started scrollto">新規登録</a>
+          <a href="questions" class="btn-get-started scrollto">クイズに答える</a>
+        <% end %>
       </div>
     </div>
   </div>
