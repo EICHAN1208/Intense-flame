@@ -1,8 +1,16 @@
 <% @questions.each do |question| %>
-      <p>Q.<%= question.question %></p>
+  <p>Q.<%= question.question %></p>
 
-      <% @answers.each do |answer| %>
-        <p><%= answer.answer %></p>
-      <% end %>
-    
+  <% question.answers.each do |answer| %>
+    <%= form_for :answer do |a| %>
+      <label>
+        <%= a.radio_button :judgment, "0" %>
+        <%= answer.answer %>
+      </label>
+    <% end %>
+  <% end %>
+
 <% end %>
+    <%= form_for :answer do |a| %>
+      <%= a.submit %>
+    <% end %>
